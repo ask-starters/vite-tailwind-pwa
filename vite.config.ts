@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { VitePWA, VitePWAOptions, ManifestOptions } from "vite-plugin-pwa";
+import tailwindcss from '@tailwindcss/vite'
 
 
 const manifestFile: Partial<ManifestOptions> = {
@@ -132,6 +133,7 @@ const Manifest: Partial<VitePWAOptions> = {
 export default defineConfig({
   plugins: [
     react(),
-    VitePWA(Manifest)
+    VitePWA(Manifest),
+    tailwindcss()
   ],
 })
